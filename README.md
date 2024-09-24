@@ -1,10 +1,10 @@
-# asu-ishrat.github.io
-## Name 
+# GitHub User Name 
+Student Name: Ishrat Lallmamode 
+GitHub Username: asu-ishrat 
 
-Ishrat Lallmamode (username: asu-ishrat)
+# GitHub Pages URL 
 
-## URL for Github Page 
+Repo: https://github.com/asu-ishrat/asu-ishrat.github.io
+Pages: asu-ishrat.github.io
 
-asu-ishrat.github.io 
-
-(example for Bash users)
+# For Our VSCode Commits 
