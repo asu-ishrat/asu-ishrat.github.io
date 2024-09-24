@@ -1,6 +1,8 @@
 # asu-ishrat.github.io
-Github website page!! 
+## Name 
 
+Ishrat Lallmamode (username: asu-ishrat)
 
-Ishrat Lallmamode  (asu-ishrat)
-GitHub Pages 
+## URL for Github Page 
+
+asu-ishrat.github.io 
