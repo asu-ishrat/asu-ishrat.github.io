@@ -7,4 +7,4 @@ GitHub Username: asu-ishrat
 Repo: https://github.com/asu-ishrat/asu-ishrat.github.io
 Pages: asu-ishrat.github.io
 
-# For Our VSCode Commits 
+# For Our Bash Commits 
