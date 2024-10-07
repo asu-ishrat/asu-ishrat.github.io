@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Siggy the Kitty</title>
+    <style>
+
+        /*  Notes for how to select different things in an HTML documents
+
+        NEVER USE THE UNIVERSAL SELECTOR IF YOU ARE USING DIFFERENT COLORS, OR FONTS
+        the universal selector sets the DEFAULT behavior for CSS. 
+
+        * {
+        
+        
+        }
+
+            element selectors 
+
+            element {
+                property: value;
+            }
+
+            id selectors 
+            #id-name{
+                property: value;  
+            }
+
+            class selectors 
+            .class-name { 
+                property: value; 
+            
+            }
+
+            descendent OR CHILDREN selectors 
+
+            parent-selector > child-selector 
+
+            { 
+                property: value; 
+            }
+
+            pseduoclass selector 
+            list of types of pseudoclasses: https://www.w3schools.com/css/css_pseudo_classes.asp 
+
+            element,id,class:STATE {
+                property: value; 
+            }
+
+           element,id,class::TYPE{
+
+                property: value; 
+           
+           }
+
+
+
+        
+        */
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+        body {
+            background-color: #000000;
+        }
+
+        .container { 
+            position: relative; 
+            width: 798px; 
+            height: 738px; 
+            margin: auto;
+            z-index: -999; 
+      
+        }
+
+        #siggy-image {
+            position: relative; 
+            height: 400px; 
+            width: 400px; 
+            background-image: url('./updatedSiggy.png');
+            background-size: cover;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+            z-index: 1; 
+        }
+
+        #placeholder { 
+            position: relative; 
+            width: 100%; 
+            height: 210px; 
+            background-color: #E2C800;
+            border-radius: 41px 41px 0px 0px;
+            margin-top: -187px;
+            margin-bottom: 0px;
+            z-index: 0; 
+        }
+        
+
+        nav{
+            width: inherit; 
+            background-color: #E2C800;
+            color: #000000;
+            margin-top: -20px; 
+            margin-bottom: 0px;
+          
+
+            
+        }
+
+        nav > ul {
+            width: 100%;
+            height: 100%;
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+
+        nav > ul > li {
+            
+            padding: 38px; 
+            display: inline-block;
+        }
+
+        nav > ul > li > a  {
+            background-color: #000000;
+            width: 183px;
+            height: 87px;
+            border-radius: 25px;
+            text-align: center;
+            border-color: #000000;
+            border-width: 0px;
+            border-style: none;
+            color: #FFFFFF; 
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 400;
+            text-transform: lowercase;
+            text-decoration: none;
+            padding: 34px 64px; 
+            margin-top: 25px;
+        }
+
+ 
+
+        nav > ul > li> a:hover{
+
+            background-color: #E2C800;
+            color: #000000; 
+            font-family: "Playfair Display", serif;
+            font-size: 20px; 
+            font-style: italic; 
+            font-weight: 800; 
+            letter-spacing: 4px;
+            text-decoration: none; 
+            border-color: #000000;
+            border-width: 1px;
+            border-style: solid;
+            padding: 34px 64px; 
+            margin-top: 25px;
+        }
+
+        #content{
+            background-color: #E2C800;
+            margin-top: -80px;
+            padding: 20px;
+
+        }
+
+        #siggy {
+            background-color: inherit; 
+            color: #000000;
+            font-family: "Playfair Display", serif;
+            font-size: 64px;
+            font-style: italic;
+            font-weight: 800;
+            line-height: normal;
+        }
+
+        #sectionHeadings{
+
+            background-color: #E2C800; 
+            color: #000000;
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            font-style: italic;
+            font-weight: 800;
+            line-height: normal;
+
+        }
+
+        #about { 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #about::first-letter{
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            font-weight: 800;
+            font-style: oblique;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="siggy-image"></div>
+        <div id="placeholder"></div>
+        <nav id="navigation">
+            <ul>
+                <li><a href="#about">about</a></li>
+                <li><a href="#why">why</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="content"> 
+            <p id="siggy">Siggy the Singularity</p>
+
+            <section id="about">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            </section>
+        </div>
+
+    </div>
+</body>
+
+</html>
