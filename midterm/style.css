@@ -4,7 +4,7 @@
 
 body{
     overflow-y: hidden;
-    overflow-x: auto;
+    overflow-x: hidden;
     background-color: #1E2019;
     
 }
@@ -153,6 +153,13 @@ a:hover{
 /* states that if a screen is smaller than 480 pixels to change*/ 
 
 @media only screen and (max-width: 1030px){
+    body{
+        overflow-y: auto;
+        overflow-x: auto;
+        background-color: #1E2019;
+        
+    }
+    
     #space{
  
         height: 100vh; 
