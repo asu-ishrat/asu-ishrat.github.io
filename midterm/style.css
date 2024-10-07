@@ -31,7 +31,7 @@ video source: https://www.pexels.com/video/satellite-docking-in-a-space-shuttle-
 #space{
     width: 100vw; 
     height: 100vh; 
-    object-fit: contain;
+    object-fit: cover;
     z-index: -10; 
 }
 
