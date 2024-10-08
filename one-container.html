@@ -4,59 +4,7 @@
 <head>
     <title>Siggy the Kitty</title>
     <style>
-        /*  Notes for how to select different things in an HTML documents
-
-        NEVER USE THE UNIVERSAL SELECTOR IF YOU ARE USING DIFFERENT COLORS, OR FONTS
-        the universal selector sets the DEFAULT behavior for CSS. 
-
-        * {
-        
-        
-        }
-
-            element selectors 
-
-            element {
-                property: value;
-            }
-
-            id selectors 
-            #id-name{
-                property: value;  
-            }
-
-            class selectors 
-            .class-name { 
-                property: value; 
-            
-            }
-
-            descendent OR CHILDREN selectors 
-
-            parent-selector > child-selector 
-
-            { 
-                property: value; 
-            }
-
-            pseduoclass selector 
-            list of types of pseudoclasses: https://www.w3schools.com/css/css_pseudo_classes.asp 
-
-            element,id,class:STATE {
-                property: value; 
-            }
-
-           element,id,class::TYPE{
-
-                property: value; 
-           
-           }
-
-
-
-        
-        */
-
+      
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 
@@ -64,92 +12,79 @@
             background-color: #000000;
         }
 
-        .container {
-            position: relative;
-            width: 798px;
-            height: 738px;
-            margin: auto;
-            z-index: -999;
-
+        .container{
+            height: 100vh; 
+            width: 786px; 
+            margin: 0 auto;
+            z-index: 0;
         }
 
-        #siggy-image {
+        #siggy-image{
             position: relative;
-            height: 400px;
-            width: 400px;
             background-image: url('./updatedSiggy.png');
-            background-size: cover;
+            width: 400px; 
+            height: 400px; 
             border-radius: 50%;
-            margin-left: auto;
+            background-size: cover;
+            margin: 129px auto;
+            z-index: 2; 
+        }
+
+        .content{
+            background-color: #E2C800;
+            width: 786px; 
+            height: 100%; 
+            margin-top: -210px;
+            margin-left: auto; 
             margin-right: auto;
-            margin-top: 40px;
-            z-index: 1;
-        }
-
-        .content {
-            background-color: #E2C800;
-            margin-top: -189px;
+            z-index: 1; 
             border-radius: 45px 45px 0px 0px;
-            background-color: #E2C800;
             padding: 20px;
-
         }
-
 
         nav {
-            width: 75%;
-            height: 100px;
-            background-color: #E2C800;
-            color: #000000;
-            margin-top: 200px;
-            margin-bottom: 0px;
-            margin-right: auto;
-            margin-left: auto;
+
+            position: relative; 
+            top: 150px;
+            width: 70%;
+            margin: auto;
+            height: 300px;
 
         }
 
-
-        nav>a button {
+        a button {
             background-color: #000000;
-            width: 183px;
-            height: 87px;
-            border-radius: 25px;
-            text-align: center;
-            border-color: #000000;
-            border-width: 0px;
-            border-style: none;
-            color: #FFFFFF;
+            color: #FFFFFF; 
             font-family: "Playfair Display", serif;
             font-size: 20px;
             font-style: italic;
             font-weight: 400;
             text-transform: lowercase;
             text-decoration: none;
-
+            border-style: none;
+            border-radius: 25px;
+            padding: 35px 60px; 
         }
 
+ 
 
-
-        nav>a:hover button {
+         a:hover button {
 
             background-color: #E2C800;
-            color: #000000;
+            color: #000000; 
             font-family: "Playfair Display", serif;
-            font-size: 20px;
-            font-style: italic;
-            font-weight: 800;
+            font-size: 20px; 
+            font-style: italic; 
+            font-weight: 800; 
             letter-spacing: 4px;
-            text-decoration: none;
+            text-decoration: none; 
             border-color: #000000;
             border-width: 1px;
             border-style: solid;
-            padding: 34px 64px;
-            margin-top: 25px;
         }
 
-     
         #siggy {
-            background-color: inherit;
+            background-color: inherit; 
             color: #000000;
             font-family: "Playfair Display", serif;
             font-size: 64px;
@@ -158,9 +93,11 @@
             line-height: normal;
         }
 
+        #about { 
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-  
-        #about::first-letter {
+        #about::first-letter{
             font-family: "Playfair Display", serif;
             font-size: 48px;
             font-weight: 800;
