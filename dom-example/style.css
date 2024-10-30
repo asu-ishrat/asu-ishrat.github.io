@@ -1,3 +1,5 @@
+/* overflow reference: https://www.w3schools.com/cssref/pr_pos_overflow.php */ 
+
 body { 
     background-color: black;
     color: white;
@@ -7,30 +9,34 @@ body {
 
 .container{ 
     width: 90vw; 
-    height: 90vh; 
+    height: 90vh;
     display: grid;   
     grid-template-columns: 50% 50%;  
 }
 
 .container > div { 
     margin-right: 51px; 
+   
 }
 
+
+
 .interactivity{
-    position: relative; 
+    position: relative;
     top: 0px;
     margin-top: 89px;
 
 }
+
 
  .narrative {
     position: relative; 
     top: 0px;
     padding: 86px 45px;
+    overflow-y: auto;
     border: 5px solid #FFF;
     border-radius: 30px;
     margin-top: 89px;
-
     color: #FFF;
     font-family: "Roboto Condensed";
     font-size: 20px;
@@ -39,6 +45,8 @@ body {
     line-height: normal;
 
 }
+
+
 
 h1{
     color: #FFF;
@@ -49,6 +57,7 @@ h1{
     line-height: normal;
     text-align: center;
     margin: 0px;
+
 }
 
 #character-name { 
@@ -72,7 +81,7 @@ h1{
 }
 
 
-input[type=text]{
+input[type="text"]{
 
     width: 387px; 
     height: 55px; 
@@ -127,6 +136,8 @@ input[type=text]{
 
 }
 
+
+
 #result{
     color: #FFF;
     text-align: center;
@@ -138,3 +149,4 @@ input[type=text]{
     margin-top: 25px;
 }
 
+ 
