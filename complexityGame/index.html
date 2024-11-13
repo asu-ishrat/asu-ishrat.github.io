@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>What Type of Project Am I?</title>
+    <script href="quiz.js"></script>
+    <style>
+        body {
+            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            margin: auto;
+            width: 65vw;
+            display: block;
+
+        }
+
+        section {
+            width: inherit;
+            background: #FFC627;
+            color: black;
+            border-radius: 15px;
+            border: 0px solid;
+            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            filter: drop-shadow(0px 1px 0px #1b1b1c2d);
+
+        }
+
+
+
+        .buttonGroup {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            width: inherit;
+
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 0px solid;
+            font-size: 18px;
+
+        }
+
+        button:hover {
+            background-color: transparent;
+            border: 2px solid black;
+            color: black;
+        }
+
+        button:focus {
+            background-color: transparent;
+            border: 2px solid black;
+            color: black;
+        }
+
+        #two {
+            display: none;
+        }
+
+        #three {
+            display: none;
+        }
+
+        #four {
+            display: none;
+        }
+
+        #five {
+            display: none;
+        }
+
+        #submit{
+            display: none; 
+            font-size: 28px;
+            background-color: black;
+            color: white;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+
+        #submit>button{
+            font-size: 24px;
+            background-color: black;
+            color: white;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+
+        #header {
+            width: inherit;
+            font-size: 48px;
+            background-color: black;
+            color: white;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            font-weight: 900;
+            border-radius: 15px;
+        }
+
+        #submit{
+            width: 100%;
+            background: #000000;
+            color: white;
+            border-radius: 15px;
+            border: 0px solid;
+            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            filter: drop-shadow(0px 1px 0px #1b1b1c2d);
+            margin: auto;
+
+        }
+
+        #results {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div id="header">What Project Am I?</div>
+
+        <section id="description">
+            <p>The goal of this mini-quiz game is to determine what type of project your dashboard is.</p>
+
+            <p>This quiz is for <strong>educational</strong> purposes and should not be used to evaluate projects.</p>
+        </section>
+
+        <section id="one">
+            <h3>Question #1</h3>
+            <p>Do you have a set goal for your project?</p>
+            <div class="buttonGroup">
+                <button id="1" onclick="addValue(0, 'one', this)">We don't even know where to begin</button>
+                <button id="2" onclick="addValue(1, 'one', this)">Clear goals, clear outcomes</button>
+                <button  id="3" onclick="addValue(2, 'one', this)">We have a question we want to answer</button>
+                <button id="4" onclick="addValue(3, 'one', this)">We have an overall objective</button>
+            </div>
+        </section>
+        <section id="two">
+
+            <h3>Question #2</h3>
+            <p>Do you know who is going to be using your dashboard?</p>
+            <div class="buttonGroup">
+                <button id="5" onclick="addValue(0, 'two', this)">No idea</button>
+                <button id="6" onclick="addValue(1, 'two', this)">Yes. We have a core group that we know will be using the
+                    tool</button>
+                <button  id="7" onclick="addValue(2, 'two', this)">We have identified groups of end-users, but not specific
+                    ones</button>
+                <button id="8" onclick="addValue(3, 'two', this)">We have been given some names to engage with</button>
+            </div>
+        </section>
+
+        <section id="three">
+            <h3>Question #3</h3>
+            <p>How are you getting your requirements?</p>
+            <div class="buttonGroup">
+                <button id="9" onclick="addValue(0, 'three', this)">No idea</button>
+                <button id="10" onclick="addValue(1, 'three', this)">We have a requirements document that's signed off by our stakeholders</button>
+                <button id="11" onclick="addValue(2, 'three', this)">We have goals we wish to accomplish. We need to build a requirements document based
+                    off of those</button>
+                <button id="12" onclick="addValue(1, 'three', this)">We need to engage with our end users to learn more about what they want</button>
+            </div>
+        </section>
+        <section id="four">
+            <h3>Question #4</h3>
+            <p>Do you know your data sources?</p>
+            <div class="buttonGroup">
+                <button id="13" onclick="addValue(0, 'four', this)">We don't know what we need to deliver</button>
+                <button id="14"  onclick="addValue(1, 'four', this)">Yes we know exactly what we need and where it is</button>
+                <button id="15"  onclick="addValue(2, 'four', this)">We know some and we are building others at the same time</button>
+                <button id="16"  onclick="addValue(3, 'four', this)">We are working with our partners to determine sources and metrics</button>
+
+            </div>
+        </section>
+        <section id="five">
+            <h3>Question #5</h3>
+            <p>Do you know your uncertainties?</p>
+            <div class="buttonGroup">
+                <button id="17"  onclick="addValue(0, 'five', this)">Everything</button>
+                <button id="18"  onclick="addValue(1, 'five', this)">None to very few, this dashboard is straightforward</button>
+                <button id="19"  onclick="addValue(2, 'five', this)">Some, however we have organized our data and dashboard to be able to adapt to
+                    changes</button>
+                <button id="20"  onclick="addValue(3, 'five', this)">Many, but we know our unknowns</button>
+            </div>
+        </section>
+       <section id="submit"><button onclick="getResults()">Submit</button></section>
+
+        <section id="results">
+
+
+        </section>
+
+    </main>
+    <script>
+        let score = 0;
+
+        function addValue(val, section, id) {
+            id.style.backgroundColor = "transparent"
+            id.style.border = "2px solid black"
+            id.style.color = "black"
+            let block = "block"
+            score = score + val;
+            console.log(score)
+            switch (section) {
+                case "one":
+                    document.getElementById("two").style.display = block;
+                    break;
+                case "two":
+                    document.getElementById("three").style.display = block;
+                    break;
+                case "three":
+                    document.getElementById("four").style.display = block;
+                    break;
+                case "four":
+                    document.getElementById("five").style.display = block;
+                    break;
+                case "five":
+                    document.getElementById("submit").style.display = block; 
+                    break;
+                default:
+                    console.log("uhoh something broke")
+
+            }
+            return score;
+
+        }
+
+    
+        function getResults(){
+            let submit = document.getElementById("submit")
+            submit.style.display  = "none"
+            let results = document.getElementById("results")
+            results.style.display = "block" 
+
+            if(score >= 0 && score < 2){
+                results.innerHTML = "<h1>You Need Exploration</h1><p>Chances are that you're doing some exploration, or you're just starting out. You might need to talk with your project stakeholders to develop the idea of this dashboard more.</p> <button onclick=(location.reload())>Play Again?</button>" 
+            }
+
+            else if(score >=2 && score <=5)
+            {
+                results.innerHTML = "<h1>You're building a Barn!</h1><p>You know what you're building and how. Now all you need to do is execute. You probably: </p> <ul><li>Know exactly what you need to build</li> <li>Know and/or have the data that you need to build it with</li> <li>You know what the end-user needs</li><li>Know exactly how to execute</li></ul><button onclick=(location.reload())>Play Again?</button>" 
+            }
+
+            else if(score>6 && score <=10){
+                results.innerHTML = "<h1>You're Building a Beehive!</h1><p>You have an overall question you want to answer, or an overall story you want to tell. You are need to determine: <ul><li>How to answer that overall question</li><li>Whether that question has more questions that feed into it</li><li>You know what your end user wants to see, but you still need to determine if what you're building is valuable</li><li>You are going through and determining how many data sources you need</li><li> How big your dashboard (or dashboards) are going to be</li></ul></p> <button onclick=(location.reload())>Play Again?</button>"             }
+
+            else if(score > 10 && score <= 15)
+            {
+                results.innerHTML = "<h1>You're Building a Spider Web!</h1><p>You have a mission statement, and it's up to you to determine:</p> <ul><li>What you're building</li><li>You know what you don't know, and you're working with your partners and stakeholders to engage others to learn more</li><li>What the end user finds valuable</li><li>How you're going to deliver it (dashboard, workshop etc...)</li><li>What data you're going to deliver</li><li>What data sources have that data</li></ul> <button onclick=(location.reload())>Play Again?</button>"          
+            }
+
+            else{
+                results.innerHTML = "something went wrong"
+            }
+
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>
