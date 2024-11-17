@@ -1,11 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDN Example</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+        integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            width: 95vw;
+            height: 95vh;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        #anime {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        #anime2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div id="container">
+        <!--  <div id="map"></div> -->
+         <div id="anime" onclick="animeClick(document.getElementById('progress'), document.getElementById('frames'))"></div>
+         <div id="progress"></div>
+         <div id="frames"></div>
+    </div>
+
+
+    <script>
+        /*     var map = L.map('map',{
+                zoomControl: false, 
+                keyboard: true
+            }).setView([33.4255, -111.9400], 13);
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map); 
+        
+                L.control.zoom({
+                    zoomInText: "<span aria-hidden='true'>+</span>",
+                    zoomOutText: "Zoom Out"
+                }).addTo(map)
+         */
+
+        function animeClick(progress, frames) {
+
+            var updates = 0; 
+
+            anime({
+                targets: '#anime',
+                translateX: [100, 500],
+                loop: true,
+                backgroundColor: '#0000',
+                duration: 6 * 1000,
+                update: function (anim) {
+                    updates++;
+                    progressLogEl.value = 'progress : ' + Math.round(anim.progress) + '%';
+                    updateLogEl.value = 'updates : ' + updates;
+                }
+            });
+
+        }
+
+    </script>
 </body>
+
 </html>
