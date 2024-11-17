@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>What Type of Project Am I?</title>
+    <title>What The Scaffold?</title>
     <script href="quiz.js"></script>
     <style>
         body {
@@ -137,19 +137,19 @@
 
     <main>
 
-        <div id="header">What Project Am I?</div>
+        <div id="header">What the Scaffold?</div>
 
         <section id="description">
-            <p>The goal of this mini-quiz game is to determine what type of project your dashboard is.</p>
+            <p>The goal of this mini-game/quiz is to walk you through a couple of questions that you can ask yourself when you're trying to get your scaffolding</p>
 
             <p>This quiz is for <strong>educational</strong> purposes and should not be used to evaluate projects.</p>
         </section>
 
         <section id="one">
-            <h3>Question #1</h3>
+            <h3>Question #1: Do you know why you're building?</h3>
             <p>Do you have a set goal for your project?</p>
             <div class="buttonGroup">
-                <button id="1" onclick="addValue(0, 'one', this)">We don't even know where to begin</button>
+                <button id="1" onclick="getResults()">We don't even know where to begin</button>
                 <button id="2" onclick="addValue(1, 'one', this)">Clear goals, clear outcomes</button>
                 <button  id="3" onclick="addValue(2, 'one', this)">We have a question we want to answer</button>
                 <button id="4" onclick="addValue(3, 'one', this)">We have an overall objective</button>
@@ -157,8 +157,9 @@
         </section>
         <section id="two">
 
-            <h3>Question #2</h3>
+            <h3>Question #2: Do you know what you're building?</h3>
             <p>Do you know who is going to be using your dashboard?</p>
+            <p><i>Following the principles of User Experience, we want to build with end-users in mind first and what they would find valuable.</i></p>
             <div class="buttonGroup">
                 <button id="5" onclick="addValue(0, 'two', this)">No idea</button>
                 <button id="6" onclick="addValue(1, 'two', this)">Yes. We have a core group that we know will be using the
@@ -170,8 +171,9 @@
         </section>
 
         <section id="three">
-            <h3>Question #3</h3>
+            <h3>Question #2: Do you know what you're building?</h3>
             <p>How are you getting your requirements?</p>
+            <p><i>Do you know the technical requirements? We need to build a connection between the end-user requirements to stakeholder requirements.</i></p>
             <div class="buttonGroup">
                 <button id="9" onclick="addValue(0, 'three', this)">No idea</button>
                 <button id="10" onclick="addValue(1, 'three', this)">We have a requirements document that's signed off by our stakeholders</button>
@@ -181,8 +183,9 @@
             </div>
         </section>
         <section id="four">
-            <h3>Question #4</h3>
+            <h3>Question #4: Do you know how you're building?</h3>
             <p>Do you know your data sources?</p>
+            <p><i>Data sources form the internal structure to create the full dashboard. This is </i></p>
             <div class="buttonGroup">
                 <button id="13" onclick="addValue(0, 'four', this)">We don't know what we need to deliver</button>
                 <button id="14"  onclick="addValue(1, 'four', this)">Yes we know exactly what we need and where it is</button>
@@ -194,6 +197,7 @@
         <section id="five">
             <h3>Question #5</h3>
             <p>Do you know your uncertainties?</p>
+            <p><i>What part of the scaffolding do you need to build out? Identifying uncertainties provide you a holistic scope of what your design needs.</i></p>
             <div class="buttonGroup">
                 <button id="17"  onclick="addValue(0, 'five', this)">Everything</button>
                 <button id="18"  onclick="addValue(1, 'five', this)">None to very few, this dashboard is straightforward</button>
