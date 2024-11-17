@@ -25,6 +25,8 @@
         #container {
             width: 95vw;
             height: 95vh;
+            display: grid; 
+            grid-template-columns: 50% 50%;
         }
 
         #map {
@@ -37,29 +39,35 @@
             height: 100px;
             background: red;
             border-radius: 50%;
+            display: block;
         }
 
-        #anime2 {
-            width: 100px;
-            height: 100px;
-            background: red;
-            border-radius: 50%;
+        #anime > #progress {
+            margin-top: 150px;
         }
+
+        #anime > #frames {
+            margin-top: 10px;
+        }
+
+       
     </style>
 </head>
 
 <body>
 
     <div id="container">
-        <!--  <div id="map"></div> -->
-         <div id="anime" onclick="animeClick(document.getElementById('progress'), document.getElementById('frames'))"></div>
-         <div id="progress"></div>
-         <div id="frames"></div>
+        <div id="map"></div> 
+         <div id="anime" onclick="animeClick(document.getElementById('progress'), document.getElementById('frames'))"><h1>click</h1>
+            <div id="progress"></div>
+            <div id="frames"></div>
+         </div>
+        
     </div>
 
 
     <script>
-        /*     var map = L.map('map',{
+           var map = L.map('map',{
                 zoomControl: false, 
                 keyboard: true
             }).setView([33.4255, -111.9400], 13);
@@ -70,9 +78,9 @@
         
                 L.control.zoom({
                     zoomInText: "<span aria-hidden='true'>+</span>",
-                    zoomOutText: "Zoom Out"
+                    zoomOutText: "<span aria-hidden='true'>-</span>"
                 }).addTo(map)
-         */
+      
 
         function animeClick(progress, frames) {
 
@@ -86,8 +94,8 @@
                 duration: 6 * 1000,
                 update: function (anim) {
                     updates++;
-                    progressLogEl.value = 'progress : ' + Math.round(anim.progress) + '%';
-                    updateLogEl.value = 'updates : ' + updates;
+                    progress.innerHTML = 'progress : ' + Math.round(anim.progress) + '%';
+                    frames.innerHTML = 'updates : ' + updates;
                 }
             });
 
