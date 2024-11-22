@@ -55,21 +55,33 @@ function getDateTimeLocation(){
     setMainScreen();
 }
 
-function buttonNav(id, buttonName) 
+function buttonNav(id) 
 {
-   console.log("I fired!!")
+   console.log(id)
 
-   if(buttonName == 'summary')
+   if(id.innerHTML == "summary")
    {
-    id.classList.add('active')
-    document.getElementById('weatherButton').classList.remove('active')
+    try{
+        document.getElementById('weatherButton').classList.remove('active')
+        location.href='#summaryTab'
+        id.classList.add('active')
+    }catch{
+        location.href='#summaryTab'
+
+    }
+   
    }
 
-   else(buttonName == 'weather')
+   else if(id.innerHTML == "weather")
    {
-    id.classList.add('active')
+
     document.getElementById('summaryButton').classList.remove('active')
+    location.href='#weatherTab'
+    id.classList.add('active')
+
    }
+
+
     
 }
 

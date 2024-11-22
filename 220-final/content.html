@@ -34,8 +34,8 @@
 <body onload="getDateTimeLocation()">
     <div class="backgroundWelcome">&nbsp;</div>
     <nav>
-        <button id="summaryButton"><a href="#summaryTab">summary</a></button>
-        <button id="weatherButton"><a href="#weatherTab">weather</a></button>
+        <button id="summaryButton" class="active" onclick="buttonNav(this)">summary</button>
+       <button id="weatherButton" onclick="buttonNav(this)">weather</button>
         <span id="time">time</span>
     </nav>
 
@@ -47,10 +47,7 @@
             </div>
         </section>
      
-        <section id="weatherTab">&nbsp;</section>
-
-        <section class="weather">
-          
+        <section class="weather" id="weatherTab">
             <div>
                 <h2>hourly forecast</h2>
                 <div id="listOfTemp">
