@@ -55,17 +55,22 @@ function getDateTimeLocation(){
     setMainScreen();
 }
 
-function buttonNav(id) 
+// this is our navigation. What we want to do is use location.href (equivalent to a href) to impact the DOM. 
+ function buttonNav(id) 
 {
    console.log(id)
 
    if(id.innerHTML == "summary")
    {
+
+    // this is error handling because what if you click summary, and weatherButton doesn't have the active style applied 
     try{
         document.getElementById('weatherButton').classList.remove('active')
-        location.href='#summaryTab'
-        id.classList.add('active')
+        location.href='#summaryTab' // this is the same as says <a href="...."></a> we just called it in Javascript 
+        id.classList.add('active') // give it the active class 
     }catch{
+
+        //it'll throw an error for sure, just navigate to the summary tab
         location.href='#summaryTab'
 
     }
@@ -75,9 +80,18 @@ function buttonNav(id)
    else if(id.innerHTML == "weather")
    {
 
-    document.getElementById('summaryButton').classList.remove('active')
-    location.href='#weatherTab'
-    id.classList.add('active')
+    // same as above, if we select weather twice, it'll throw an error. So we are trying to just say "if there's an error, just navigate to the page"
+    try{
+        document.getElementById('summaryButton').classList.remove('active')
+        location.href='#weatherTab'
+        id.classList.add('active')
+
+    }
+    catch{
+        location.href='#weatherTab'
+
+    }
+    
 
    }
 
@@ -126,7 +140,7 @@ function setMainScreen(){
         greeting.innerHTML = "good evening"
     }
 
-    else if(date.getHours() >=19 && date.getHours()<0){
+    else if(date.getHours() >=19){
 
         greeting.innerHTML = "good night"
 
@@ -140,7 +154,7 @@ function setMainScreen(){
 
 }
 
-// from geolocation lets get the weather 
+// even though we call this on index.html, we still need to set it before we reach content.html. We could technically set up a callback, but we have the option to be flexible. 
 
 function setWeather(position){
 
@@ -149,7 +163,7 @@ function setWeather(position){
  
 }
 
-
+/* using our LAT and LONG, let's get the temperature and weather for this location */
 async function temperatureAPI()
 {
     let data2; 
@@ -188,10 +202,15 @@ async function temperatureAPI()
     let minTemp = [] 
 
 
+    // the way that this data is structured, we need to pull it out of our data blocks and into something that highcharts can read 
 
+
+    // we create categories for the x axis 
     for(let y = 0; y<data2.daily.time.length; y++){
         xAxis.push(data2.daily.time[y])
     }
+
+    // we create the data series for max temperature for the time categories 
 
     for(let a = 0; a<data2.daily.time.length; a++){
         maxTemp.push(data2.daily.temperature_2m_max[a])
@@ -199,13 +218,16 @@ async function temperatureAPI()
 
     console.log("max temp", maxTemp)
 
+    // we create the series for the min temperatures for high charts to readd
     for(let b = 0; b<data2.daily.time.length; b++){
         minTemp.push(data2.daily.temperature_2m_min[b])
     }
 
     console.log("min temp", minTemp)
 
-    Highcharts.chart('graph', {
+    // this is the highcharts graph. 
+    // follow this example https://www.highcharts.com/demo/highcharts/line-labels 
+    Highcharts.chart('graph', { // this is saying, place this chart in the location of the element or id 'graph'
 
         title: {
             text: null,
@@ -245,6 +267,7 @@ async function temperatureAPI()
 
 }
 
+/* get the API call for the matching LAT and LONG*/ 
 async function getCity() {
 
     let data; 

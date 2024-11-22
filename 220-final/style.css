@@ -2,8 +2,6 @@
     background-color: #fff;
     overflow-x: auto;
     overflow-y: hidden; 
-    position: absolute; 
-    top: 0px;
     
 }
 
@@ -35,11 +33,11 @@
 /* w3 schools: https://www.w3schools.com/howto/howto_css_center-vertical.asp */ 
 .welcome{
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-   -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /*this is to center the svg*/ 
@@ -55,10 +53,10 @@
     
     background-color: #008786;
     padding: 11px 40px;
-    /*padding-top: 11px; 
+    padding-top: 11px; 
     padding-bottom: 11px; 
     padding-left: 40px; 
-    padding-right: 40px*/ 
+    padding-right: 40px;
     border: 0px solid;
     border-radius: 15px;
     display: flex;
@@ -140,6 +138,7 @@
 }
 
 
+/* nav bar is going to be fixed but it's also got to align with the content. under the border is fine, over it will break the boxes */ 
 
 nav{
     position: fixed; 
@@ -159,7 +158,7 @@ nav{
 }
 
 
-
+/* these buttons will act like "tabs", you press and we are going to use the location.href function in javascript. it is the equivalent of a href */
 
 nav > button  {
     background-color: transparent;
@@ -177,6 +176,8 @@ nav > button  {
     padding: 0px 12px;
 }
 
+/* create an active class. javascript does not do pseudoclasses */ 
+
 .active { 
     background-color: #008786;
     color: white;
@@ -185,6 +186,7 @@ nav > button  {
 }
 
 
+/* get the time in the corner*/ 
 
 nav > span{
     float: right; 
@@ -200,12 +202,13 @@ nav > span{
 
 }
 
+/* in our flexbox, we need to make suer that each section follows a pattern.*/ 
 .container > section{
     position: relative; 
     top: 100px; 
     width: 100vw;
     height: 100vh;
-    /*please follow the sizing conventions that Ive have stated versus trying to calculate the size */ 
+    /*this states: please follow the sizing conventions that Ive have stated versus trying to calculate the size */ 
     flex: 0 0 auto;
 
 }
@@ -258,6 +261,7 @@ nav > span{
     letter-spacing: 6.4px;
 }
 
+/* this is for the hourly forecast*/ 
 #listOfTemp{
     color: #008786;
     text-align: left;
@@ -285,6 +289,8 @@ nav > span{
 }
 
 
+/* these are our grids, this is just two divs side by side*/ 
+
 .weather > div { 
     
     height: 85%;
@@ -303,6 +309,7 @@ nav > span{
     background: transparent;
 }
 
+/* weather headers*/ 
 
 h2{
     color: #008786;
