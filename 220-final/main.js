@@ -1,8 +1,9 @@
 // GLOBAL VARIABLES 
 
-var lat="33"; 
-var long="-112"; 
+var lat=""; 
+var long=""; 
 let city = ""; 
+let temp = ""; 
 
 
 //-----------------INDEX.HTML JAVASCRIPT-------------// 
@@ -21,15 +22,8 @@ function animation(){
         loop: true // does this loop
     });
 
-    if(navigator.geolocation)
-        {
-            navigator.geolocation.getCurrentPosition(setWeather);
-        }
-    
-        else{
-            weatherLocation.innerHTML="this browser does not support location"
-        }
 }
+
 
 // this is for the accordion
 function accordion(){
@@ -52,6 +46,16 @@ function accordion(){
 //--- FOR THE NAVIGATION --// 
 
 function getDateTimeLocation(){
+    if(!navigator.geolocation)
+        {
+            alert("location is not permitted, some loss of functionality")
+            
+        }
+    
+        else{
+            navigator.geolocation.getCurrentPosition(setWeather);
+         
+        }
     setMainScreen();
 }
 
@@ -158,13 +162,14 @@ function setMainScreen(){
 
 function setWeather(position){
 
-    lat = Math.floor(position.coords.latitude)
-    long = Math.floor(position.coords.longitude)
+    lat = (position.coords.latitude)
+    long = (position.coords.longitude)
+    temperatureAPI(lat, long)
  
 }
 
 /* using our LAT and LONG, let's get the temperature and weather for this location */
-async function temperatureAPI()
+async function temperatureAPI(lat,long)
 {
     let data2; 
     let chartData; 
@@ -175,7 +180,11 @@ async function temperatureAPI()
         const response2 = await fetch(url2)
 
         if(response2){
-            data2 = await response2.json() 
+            data2 = await response2.json()
+            temp =  data2.current.temperature_2m
+            document.getElementById('dateTime').innerText += `${temp}°F`
+            getCity(lat, long);
+
         }
 
         else{
@@ -183,11 +192,10 @@ async function temperatureAPI()
         }
 
     }catch(err){
-        console.log(error)
+        console.log(err)
     }
 
-    document.getElementById('dateTime').innerText += `${data2.current.temperature_2m}°F`
-    getCity();
+
 
     let hourlyData = document.getElementById('listOfTemp')
 
@@ -280,6 +288,9 @@ async function getCity() {
 
         if(response){
             data = await response.json() 
+            city = data.address.city; 
+            document.getElementById("dateTime").innerHTML+=`in ${city}` 
+
         }
 
         else{
@@ -290,7 +301,6 @@ async function getCity() {
         console.log(error)
     }
 
-    document.getElementById("dateTime").innerHTML+=` in ${data.address.city}` 
 
    
 }
