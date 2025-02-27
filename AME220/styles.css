@@ -1,68 +1,192 @@
 * {
     --orange: #EF8354;
-    --darkblue: #4F5D75; 
+    --darkblue: #2D3142; 
     --darkgrey: #4F5D75; 
     --lightgrey: #BFC0C0; 
 }
 
-body{
+body { 
     background-color: white;
+    
 }
 
-nav {
 
-    background-color: var(--orange);
-
-
-}
 
 #heading{
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 96px; 
-    letter-spacing: 4.8px;
-    text-transform: uppercase;
+
     color: var(--orange); 
+   font-family: "DM Serif Display", serif;
+   font-size: 96px;
+   line-height: 134.4px; 
+   letter-spacing: 10px; 
+   text-transform: uppercase;
+   font-weight: 400;
+
+    
+}
+
+
+
+nav {
+    background-color: #EF8354;
+    font-family: "DM Sans", sans-serif;
+}
+
+nav > ul  { 
+
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 150%; /* 54px */
+    letter-spacing: 9px;
+    list-style-type: none;
+
+
+}
+
+.navStyle > ul > li > a, a:visited{
+    color: var(--darkblue); 
+    text-decoration: none;
 }
 
 h1{
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 60px;
+
     color: var(--darkgrey);
+    font-family: "DM Serif Display", serif;
     text-transform: uppercase;
-    letter-spacing: 4.8px;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 84px */
+    letter-spacing: 6px;
 
 }
-h2{
+
+h2{ 
+
+    color: #4F5D75;
+    text-align: center;
     font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 48px;
-    color: var(--darkgrey);
-    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 67.2px */
     letter-spacing: 4.8px;
+    
+    
 
 }
 
 h3{
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 36px;
     color: var(--darkgrey);
     text-transform: lowercase;
-    letter-spacing: 4.8px;
+    color: #4F5D75;
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 50.4px */
+    letter-spacing: 3.6px;
 
 }
 
-.description{
-    color: var(--darkgrey);
-    font-family: "DM Sans";
+strong{
+
+    font-family: "DM Sans", sans-serif;
+    color:var(--orange); 
+    background-color: var(--darkblue); 
+    font-weight: 800; 
+
+}
+
+i{
+    font-family: "DM Sans", sans-serif;
+    color:var(--orange); 
+    background-color: var(--darkblue); 
+    font-weight: 300; 
+
+}
+
+
+.description {
+
+    font-family: "DM Sans", sans-serif;
+    color: #2D3142;
     font-size: 24px;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 150;
     line-height: 36px;
+
+}
+
+.description > ul {
+
+    list-style: "⇱  ";
+ 
+
+}
+.description > ul > li >  a:visited, a:active { 
+    color: var(--orange); 
+    text-decoration: none;
+}
+
+.description > ul > li > a { 
+    font-family: "DM Sans", sans-serif;
+    color:var(--orange); 
+    background-color: var(--darkblue); 
+    font-weight: 800; 
+    text-decoration: none;
+    -webkit-text-stroke: 0px;
+    transition: color 2s, -webkit-text-stroke 2s; 
+}
+
+.description > ul > li > a:hover { 
+    font-family: "DM Sans", sans-serif;
+    color: transparent; 
+    -webkit-text-stroke: 1px white; 
+    background-color: var(--darkblue); 
+    font-weight: 800; 
+    text-decoration: none;
+
+}
+
+ section > a:visited, active { 
+    color: var(--orange); 
+    text-decoration: none;
+}
+
+section >  div > a{
+    font-family: "DM Sans", sans-serif;
+    color:var(--orange); 
+    background-color: var(--darkblue); 
+    font-weight: 800; 
+    text-decoration: none;
+    -webkit-text-stroke: 0px;
+    transition: color 2s, -webkit-text-stroke 2s; 
+}
+
+section > div  > a:hover {
+
+    font-family: "DM Sans", sans-serif;
+    color: transparent; 
+    -webkit-text-stroke: 1px white; 
+    background-color: var(--darkblue); 
+    font-weight: 800; 
+    text-decoration: none;
+}
+
+.description > div::first-letter {
+   
+    font-family: "DM Serif Display", serif;
+    font-size: 36px;
+    font-style: italic;
+    /* reference for initial letter 
+/* I just learned about the Initial Letter Property!
+https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter*/
+
+    -webkit-initial-letter: 1;
+    initial-letter: 1;
+
 }
