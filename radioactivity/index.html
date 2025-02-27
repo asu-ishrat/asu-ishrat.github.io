@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <title>radio ☢ activity</title>
+</head>
+
+<body onload="generate()">
+    <div class="metrics">
+        <div>
+            <span id="war"></span>
+            <p class="caption">chance of war</p>
+        </div>
+        <div> <span id="favor"></span>
+            <p class="caption">government <br>favorability</br></p>
+        </div>
+        <div>
+            <span id="cost"></span>
+            <p class="caption">cost of living<br> on earth</br></p>
+        </div>
+        <div>
+            <span id="earnings"></span>
+            <p class="caption">space corp<br/> earnings </p>
+        </div>
+    </div>
+
+    <div class="graph">
+        <div id="container"></div>
+    </div>
+
+    <script>
+        var warVal = 50;
+        var favorVal = 50; 
+        var costVal = 100; 
+        var earningsVal = 5; 
+
+
+
+        function generate(){
+
+            let war = document.getElementById('war')
+            let favor = document.getElementById('favor')
+            let cost = document.getElementById('cost')
+            let earnings = document.getElementById('earnings')
+
+            war.innerHTML = `${warVal}%`
+            favor.innerHTML = `${favorVal}%`
+            cost.innerHTML = `$${costVal}K`
+            earnings.innerHTML = `$${earningsVal}B`
+
+            graph(); 
+
+        }
+
+        function graph() {
+            // Data retrieved from https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/
+Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    title: {
+        text: 'Storage Available on Yukka vs Nuclear Waste Sent'
+    },
+    
+    xAxis: {
+        allowDecimals: false,
+        accessibility: {
+            rangeDescription: 'Range: 1940 to 2024.'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Nuclear Waste (metric tons)'
+        }
+    },
+    
+    plotOptions: {
+        area: {
+            
+        }
+    },
+    series: [{
+        name: 'Space Available',
+        data: [213011,163011,113011,63011]
+            
+    }, {
+        name: 'Nuclear Waste',
+        data: [
+        100000,150000,200000,250000
+        ]
+    }]
+});
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

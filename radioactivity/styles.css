@@ -1,0 +1,73 @@
+* {
+    font-family: "Chivo Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 200px auto;
+    padding: 0px;
+    margin: 0px;
+    background-color: #1C0F13;
+
+}
+
+body > div 
+
+{
+    width: 100%; 
+}
+
+
+.metrics {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFBF00;
+    color: #000;
+    font-family: "Chivo Mono";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 auto;
+
+}
+
+.caption {
+    color: #000;
+    font-family: "Chivo Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 24px;
+    margin-top: -10px;
+}
+
+.metrics > div {
+
+border: 5px solid  #1C0F13; 
+    flex: 1 1 0px; 
+    width: 191px; 
+    height: 100%;
+    padding: 20px; 
+    margin: auto;
+
+}
+
+.metrics > div > span{
+    width: 100%;
+padding: 0px; 
+margin: 0px; 
+}
+
+.graph{
+    margin: 0 auto; 
+    
+}
+
+#container{
+    height: 100%; 
+}
