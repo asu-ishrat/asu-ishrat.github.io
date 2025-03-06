@@ -157,7 +157,7 @@ i{
     text-decoration: none;
 }
 
-section >  div > a{
+section >  div > a {
     font-family: "DM Sans", sans-serif;
     color:var(--orange); 
     background-color: var(--darkblue); 
@@ -180,13 +180,12 @@ section > div  > a:hover {
 .description > div::first-letter {
    
     font-family: "DM Serif Display", serif;
-    font-size: 36px;
+    font-size: 60px;
     font-style: italic;
     /* reference for initial letter 
 /* I just learned about the Initial Letter Property!
 https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter*/
-
-    -webkit-initial-letter: 1;
-    initial-letter: 1;
+    -webkit-initial-letter: 2;
+    initial-letter: 2;
 
 }

@@ -1,0 +1,86 @@
+* {
+    /* CSS HEX */
+    --dark-red: #8e1b10ff;
+    --licorice: #181011ff;
+    --robin-egg-blue: #49cdc3ff;
+    --yinmn-blue: #225194ff;
+    --jordy-blue: #96b6e2ff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body{
+    background-image: url('./hubble-veil-small-potw2508a-1.jpg');
+    width: 100vw; 
+    height: 100vh; 
+    margin: 0px; 
+    padding: 0px; 
+    display: grid; 
+    grid-template-rows: 96px auto 96px;
+    overflow: hidden;
+    
+
+}
+
+nav { 
+    background: linear-gradient(180deg, #181011 2%, rgba(24, 16, 17, 0.06) 100%);
+    color: white; 
+    letter-spacing: 2px;
+    font-size: 36px;
+    height: 96px; 
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    margin: -1px auto; 
+    width: 100%;
+}
+
+nav > div {
+    padding: 12px;
+}
+
+nav > div > a:link, a:visited, a:active{
+    color: white; 
+    text-decoration: none;
+}
+
+nav > div:hover{
+   background-color: var(--dark-red);
+}
+
+#content-container{
+    width: 100%; 
+    display: flex; 
+    gap: 24px; 
+    overflow-y: hidden; 
+    overflow-x: auto; 
+    color: var(--robin-egg-blue);
+    font-family: 'Arial Narrow';
+    letter-spacing: 2px;
+}
+
+.content{
+    background-color: rgba(0,0,0,.6);
+    border-radius: 12px; 
+    width: 45%;
+    height: 90%;
+    padding: 20px;
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    flex-basis: auto; 
+}
+
+footer {
+    background: linear-gradient(180deg, rgba(24, 16, 17, 0.06) 0%, #181011 100%);
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 33% 33% 33%;
+    align-items: center;
+    border-top: 5px white solid;
+   
+}
+
+footer > div {
+    color: white; 
+}
