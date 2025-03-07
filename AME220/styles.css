@@ -3,11 +3,35 @@
     --darkblue: #2D3142; 
     --darkgrey: #4F5D75; 
     --lightgrey: #BFC0C0; 
+    font-size: 12px; 
 }
 
 body { 
     background-color: white;
-    
+   margin: 0px; 
+   /*margin shorthand for 
+    margin-top
+    margin-right
+    margin-bottom
+    margin-left */ 
+    padding: 0px; 
+
+    /* shorthand for padding 
+    padding-top
+    padding-right
+    padding-bottom
+    padding-left*/ 
+    font-size: 2rem; 
+
+}
+
+.container-content{
+    position: relative; 
+    left: 25vw; 
+    padding: 36px; 
+    margin: 24px;
+    width: 65vw; 
+    font-size: 2rem; 
 }
 
 
@@ -16,9 +40,8 @@ body {
 
     color: var(--orange); 
    font-family: "DM Serif Display", serif;
-   font-size: 96px;
-   line-height: 134.4px; 
-   letter-spacing: 10px; 
+   font-size: 7rem;
+   line-height: 134.4px;  
    text-transform: uppercase;
    font-weight: 400;
 
@@ -30,12 +53,21 @@ body {
 nav {
     background-color: #EF8354;
     font-family: "DM Sans", sans-serif;
+    position: fixed; 
+    top: 0px; 
+    left: 0px; 
+    width: 25vw; 
+    height: 100vh; 
+    font-size: 3rem; 
 }
 
-nav > ul  { 
 
+nav > ul  { 
+    margin-left: 0px;
+    margin-top: 121px; 
+    padding: 0px; 
     text-align: center;
-    font-size: 36px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 100;
     line-height: 150%; /* 54px */
@@ -45,7 +77,27 @@ nav > ul  {
 
 }
 
+nav > #menu { 
+    margin-top: 60px; 
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: var(--lightgrey);
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    display: block;
+}
+
+nav > #menu > span { 
+    position: relative; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+
 .navStyle > ul > li > a, a:visited{
+    font-size: 2rem; 
     color: var(--darkblue); 
     text-decoration: none;
 }
@@ -55,7 +107,7 @@ h1{
     color: var(--darkgrey);
     font-family: "DM Serif Display", serif;
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 84px */
@@ -68,7 +120,7 @@ h2{
     color: #4F5D75;
     text-align: center;
     font-family: "DM Serif Display", serif;
-    font-size: 48px;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 67.2px */
@@ -84,7 +136,7 @@ h3{
     color: #4F5D75;
     text-align: center;
     font-family: "DM Serif Display", serif;
-    font-size: 36px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 50.4px */
@@ -98,6 +150,7 @@ strong{
     color:var(--orange); 
     background-color: var(--darkblue); 
     font-weight: 800; 
+    font-size: 2rem;
 
 }
 
@@ -106,6 +159,7 @@ i{
     color:var(--orange); 
     background-color: var(--darkblue); 
     font-weight: 300; 
+    font-size: 2rem; 
 
 }
 
@@ -114,11 +168,15 @@ i{
 
     font-family: "DM Sans", sans-serif;
     color: #2D3142;
-    font-size: 24px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 150;
     line-height: 36px;
 
+}
+
+.description > div { 
+    font-size: 2rem;
 }
 
 .description > ul {
@@ -130,6 +188,7 @@ i{
 .description > ul > li >  a:visited, a:active { 
     color: var(--orange); 
     text-decoration: none;
+    font-size: 2rem; 
 }
 
 .description > ul > li > a { 
@@ -140,6 +199,7 @@ i{
     text-decoration: none;
     -webkit-text-stroke: 0px;
     transition: color 2s, -webkit-text-stroke 2s; 
+    font-size: 2rem; 
 }
 
 .description > ul > li > a:hover { 
@@ -149,12 +209,14 @@ i{
     background-color: var(--darkblue); 
     font-weight: 800; 
     text-decoration: none;
+    font-size: 2rem; 
 
 }
 
  section > a:visited, active { 
     color: var(--orange); 
     text-decoration: none;
+    font-size: 2rem; 
 }
 
 section >  div > a {
@@ -165,6 +227,7 @@ section >  div > a {
     text-decoration: none;
     -webkit-text-stroke: 0px;
     transition: color 2s, -webkit-text-stroke 2s; 
+    font-size: 2rem;
 }
 
 section > div  > a:hover {
@@ -175,6 +238,7 @@ section > div  > a:hover {
     background-color: var(--darkblue); 
     font-weight: 800; 
     text-decoration: none;
+    font-size: 2rem; 
 }
 
 .description > div::first-letter {
@@ -188,4 +252,81 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter*/
     -webkit-initial-letter: 2;
     initial-letter: 2;
 
+}
+
+
+@media only screen and (max-width:600px){
+
+    * {
+        font-size: 10px;
+        overflow: visible;
+    }
+
+    body { 
+        position: relative; 
+        top: 0px; 
+        left: 0px; 
+        margin: 0px; 
+        padding: 0px;
+        height: 100vh;
+
+    }
+
+    nav{
+        position: fixed; 
+        top: 0px; 
+        left: 0px;
+        height: 36px;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    nav > #menu  {
+        display: none;
+    }
+
+    .container-content{
+        position: relative; 
+        top: 12vh; 
+        left: 0px;
+        padding: 36px; 
+        margin: 0px;
+        width: 60%;
+        font-size: 2rem; 
+    }
+    
+    nav > ul  { 
+        display: flex; 
+        margin: 0 auto;
+        gap: 10px;
+        padding: 0px; 
+        text-align: center;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 100;
+        letter-spacing: 9px;
+        list-style-type: none;
+    
+    
+    }
+
+    .navStyle > ul > li > a, a:visited{
+        margin: 0 auto;
+        font-size: 2rem; 
+        color: var(--darkblue); 
+        text-decoration: none;
+    }
+    
+
+    .description {
+
+        font-family: "DM Sans", sans-serif;
+        color: #2D3142;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 150;
+        line-height: 36px;
+        z-index: -10;
+    
+    }
 }
