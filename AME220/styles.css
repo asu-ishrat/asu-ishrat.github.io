@@ -181,7 +181,7 @@ i{
 
 .description > ul {
 
-    list-style: "⇱  ";
+    list-style: "";
  
 
 }
@@ -296,9 +296,15 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter*/
     }
     
     nav > ul  { 
+
+
+        /* SO TRUE STORY CLASS. I had completed the entire lecture, and I noticed that my sound got corrupted!! Fun. */ 
+
+
         display: flex; 
-        margin: 0 auto;
-        gap: 10px;
+        margin: 0 auto; /* this was the culprit!!! <-- check your margins when you're trying to do anything! */ 
+        gap: 20px; /* here is where I think the sound cuts off?*/ 
+
         padding: 0px; 
         text-align: center;
         font-size: 3rem;
@@ -306,7 +312,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter*/
         font-weight: 100;
         letter-spacing: 9px;
         list-style-type: none;
-    
+        justify-content: center;    /* I also added some quality of life stuff like making it centered on top!*/ 
+        align-items: center; 
     
     }
 
