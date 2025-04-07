@@ -6,13 +6,13 @@
     <title>Javascript and Dice</title>
     <!--https://www.w3schools.com/html/html_favicon.asp favicons-->
     <link rel="icon" type="image/x-icon" href="./Vector.svg">
-    <script src="./dice-game.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
+
 
 </head>
 
@@ -29,7 +29,7 @@
             </header>
 
             <form id="character-name">
-                <input id="username" type="text" value="Character's Name" onclick="inputFocus(this)"/>
+                <input id="username" type="text" value="Character's Name" onclick="inputName(this)"/>
             </form>
             <div id="buttonGroup">
                 <button id="generate" onclick="generateName()">Generate</button>
@@ -69,6 +69,8 @@
         </div>
 
     </div>
+
+    <script src="./dice-game.js"></script>
 
 </body>
 
