@@ -77,18 +77,23 @@ nav > ul  {
 
 }
 
-nav > #menu { 
-    margin-top: 60px; 
-    margin-left: auto; 
-    margin-right: auto;
+ #menu { 
+    position: fixed; 
+    top: 60px; 
+    left: calc(20vw/2);
     background-color: var(--lightgrey);
     width: 60px; 
     height: 60px; 
     border-radius: 50%;
     display: block;
+    z-index: 10; 
 }
 
-nav > #menu > span { 
+nav {
+    z-index: 9;
+}
+
+#menu > span { 
     position: relative; 
     top: 50%;
     left: 50%; 
