@@ -165,6 +165,7 @@ function setWeather(position){
     lat = (position.coords.latitude)
     long = (position.coords.longitude)
     temperatureAPI(lat, long)
+    console.log(typeof lat)
  
 }
 
